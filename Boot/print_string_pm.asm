@@ -11,16 +11,14 @@ print_string_pm:
 	print_string_pm_loop:
 		mov al, [ebx]
 		mov ah, WHITE_ON_BLACK
-
 		cmp al, 0
-		je done
+		je print_string_pm_done
 
 		mov [edx], ax
-
 		add edx, 2
 		add ebx, 1
 		jmp print_string_pm_loop
 
-	done:
+	print_string_pm_done:
 		popa
 		ret

@@ -23,7 +23,7 @@ load_kernel :
 	call print_string
 	mov bx , KERNEL_OFFSET ; Set -up parameters for our disk_load routine , so
 	mov dh , 15 ; that we load the first 15 sectors ( excluding
-	mov dl , [ BOOT_DRIVE ] ; the boot sector ) from the boot disk ( i.e. our
+	mov dl , [BOOT_DRIVE] ; the boot sector ) from the boot disk ( i.e. our
 	call disk_load ; kernel code ) to address KERNEL_OFFSET
 	ret
 
@@ -43,6 +43,3 @@ MSG_LOAD_KERNEL db " Loading kernel into memory. " , 0
 ; Bootsector padding
 times 510 -($ -$$) db 0
 dw 0xaa55
-
-times 256 dw 0x0000
-times 256 dw 0x0000
