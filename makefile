@@ -11,8 +11,8 @@ os-image : boot_sect.bin kernel.bin
 # - the kernel_entry , which jumps to main () in our kernel
 # - the compiled C kernel
 kernel.bin : kernel_entry.o kernel.o
-# i686-elf-ld -T linker.ld -o $@ $^ --oformat binary
-	i686-elf-ld -o kernel.bin -Ttext 0x1000 kernel_entry.o kernel.o --oformat binary
+	i686-elf-ld -T linker.ld -o $@ $^ --oformat binary
+#i686-elf-ld -o kernel.bin -Ttext 0x1000 kernel_entry.o kernel.o --oformat binary
 
 # Build our kernel object file .
 kernel.o : kernel.c
