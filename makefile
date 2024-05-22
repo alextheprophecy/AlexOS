@@ -1,6 +1,7 @@
-C_SOURCES = $(wildcard kernel/*.c drivers/*.c)
-HEADERS = $(wildcard kernel/*.h drivers/*.h)
+C_SOURCES = $(wildcard drivers/*.c lib/*/*.c kernel/*.c)
+HEADERS = $(wildcard kernel/*.h drivers/*.h lib/*/*.h)
 OBJ = $(C_SOURCES:.c=.o)	
+
 
 all : os-image
 run : all
@@ -13,8 +14,9 @@ kernel.bin : kernel/kernel_entry.o ${OBJ}
 	i686-elf-ld -T linker.ld -o $@ $^ --oformat binary
 #i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
+
 %.o : %.c ${HEADERS} 
-	i686-elf-gcc -ffreestanding -c $< -o $@
+	i686-elf-gcc -ffreestanding -nostdlib -c $< -o $@
 
 # Assemble the kernel_entry
 %.o : %.asm
@@ -25,8 +27,8 @@ kernel.bin : kernel/kernel_entry.o ${OBJ}
 
 clean :
 	rm -fr *.bin *.dis *.o os-image
-	rm -fr kernel/*.o boot/*.bin drivers/*.o
+	rm -fr kernel/*.o boot/*.bin drivers/*.o lib/*/*.o
 
 # Disassemble our kernel - might be useful for debugging .
-kernel.dis : kernel .bin
+kernel.dis : kernel.bin
 	ndisasm -b 32 $< > $@

@@ -1,4 +1,4 @@
-; GDT tabel
+[bits 16]
 gdt_start:
 
 ;NULL segment
