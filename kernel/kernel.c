@@ -18,11 +18,12 @@ void main() {
     idt_install();
     isr_install();
 	irq_install();
-    keyboard_install();
+    //keyboard_install();
     //timer_install();
 
     __asm__ __volatile__("sti");    
-    clear_screen();  
-    print("Alex OS\nWelcome!");   
+
+    // clear_screen();  
+    // print("Alex OS\nWelcome!");   
     draw();   
 }

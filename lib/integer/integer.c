@@ -8,3 +8,11 @@ int digit_count(int n) {
     }
     return r;
 }
+
+int abs(n){
+    return n<0 ? -n:n;
+}
+
+int sign(n){
+    return n>0 ? 1:(n==0 ? 0:-1);
+}

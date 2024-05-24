@@ -24,7 +24,7 @@ load_kernel :
 	; mov es , bx
 	
 	mov bx , KERNEL_OFFSET
-	mov dh , 14; load ceil([ls -l kernel.bin]/512) sectors
+	mov dh , 19; load ceil([ls -l kernel.bin]/512) sectors
 	mov dl , [BOOT_DRIVE] 
 	call disk_load
 	ret

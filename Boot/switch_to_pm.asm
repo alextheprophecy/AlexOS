@@ -1,5 +1,11 @@
 [bits 16]
 switch_to_pm:
+	;set VGA video mode ;lookup table https://wiki.osdev.org/Drawing_In_Protected_Mode
+	;mov ax, 0x0002 ;text mode
+	mov ax, 0x0012 ;VGA 320*200 256 color video mode
+
+	int 0x10
+
 	cli	; We must switch of interrupts until we have
 		; set -up the protected mode interrupt vector
 		; otherwise interrupts will run riot.

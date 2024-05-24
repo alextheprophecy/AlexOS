@@ -3,6 +3,7 @@
         "memory.h": "c",
         "kernel.h": "c",
         "keyboard.h": "c",
-        "graphics.h": "c"
+        "graphics.h": "c",
+        "cstddef": "c"
     }
 }
