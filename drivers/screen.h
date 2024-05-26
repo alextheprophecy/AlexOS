@@ -1,6 +1,11 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
+#include "../kernel/low_level.h"
+#include "../kernel/memory.h"
+#include "../lib/integer/integer.h"
+#include "../lib/graphics/graphics.h"
+
 // Constants for video memory and screen properties
 #define VIDEO_ADDRESS 0xb8000
 #define MAX_ROWS 25
@@ -21,7 +26,7 @@ void print_at(char* message, int col, int row);
 
 void print(char* message);
 void printint(int number);
-void printch(char* character);
+void printch(char character);
 void printn(char* message);
 
 void clear_screen();

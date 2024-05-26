@@ -13,3 +13,7 @@ print(int number) !!warning: must be in confines of (MIN_INT, MAX_INT)
 ## graphical capabilites
 
 draw_line(Point p, color) -uses Bresenham's line algorithm
+
+## resources
+
+ <https://www.kernel.org/doc/gorman/html/understand/understand009.html>

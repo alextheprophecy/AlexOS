@@ -3,6 +3,8 @@
 [global _start]
 
 _start:
+    push esi        ;second argument
+    push edi       ; Push the first argument onto the stack -> sends first param to main  
     call main
     jmp $
 

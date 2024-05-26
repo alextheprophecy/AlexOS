@@ -1,9 +1,9 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
-#define SCREEN_W 640
-#define SCREEN_H 480 
-#define VGA_ADDRESS 0xA0000
+#include "../../drivers/graphics_driver.h"
+#include "../integer/integer.h"
+
 
 //colours:
 #define BLACK 00
@@ -23,6 +23,8 @@
 #define YELLOW 0x0e
 #define BR_WHITE 0x0f
 
+
+
 typedef struct {
     int x;
     int y;
@@ -30,11 +32,10 @@ typedef struct {
 
 
 
-void draw();
-void draw_pixel(Point p, unsigned char color);
-void draw_horizontal_line(Point p, int width, unsigned char color);
-void draw_rectangle(Point p, int width, int height, unsigned char color);
 
-void _set_bit_mask(unsigned char mask);
-void _select_plane(unsigned char plane);
+void draw();
+void draw_pixel(Point p, unsigned char colour);
+void draw_horizontal_line(Point p, int width, unsigned char colour);
+void draw_rectangle(Point p, int width, int height, unsigned char colour);
+
 #endif

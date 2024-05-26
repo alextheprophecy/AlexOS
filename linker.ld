@@ -1,7 +1,7 @@
 ENTRY(_start)
 SECTIONS
 {
-    . = 0x1000;
+    . = 0x1500;
     .text ALIGN(4) : {
         *(.multiboot)
         *(.text)
@@ -23,5 +23,5 @@ SECTIONS
         *(.bss)
         __bss_end = .;
     }
-    __end = .;
+    __k_heap_start = .;
 }

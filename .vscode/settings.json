@@ -4,6 +4,12 @@
         "kernel.h": "c",
         "keyboard.h": "c",
         "graphics.h": "c",
-        "cstddef": "c"
+        "cstddef": "c",
+        "type_traits": "c",
+        "xtr1common": "c",
+        "graphics_driver.h": "c",
+        "screen.h": "c",
+        "low_level.h": "c",
+        "integer.h": "c"
     }
 }

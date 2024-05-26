@@ -1,5 +1,9 @@
 #ifndef KERNEL_H
 #define KERNEL_H
+
+#include "low_level.h"
+#include "../drivers/screen.h"
+
 /* This defines what the stack looks like after an ISR was running */
 struct regs
 {

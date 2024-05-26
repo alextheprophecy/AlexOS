@@ -1,7 +1,5 @@
 #include "screen.h"
-#include "../kernel/low_level.h"
-#include "../kernel/memory.h"
-#include "../lib/integer/integer.h"
+
 
 void print_char(char character , int col , int row , char attribute_byte) {   
     if (character == 0) return;
@@ -85,13 +83,19 @@ void printint(int number){
     print(str);
 }
 
-void printch(char * character){  
-    unsigned char * vidmem = (unsigned char *) VIDEO_ADDRESS ;  
-    vidmem[get_cursor()] = character;
+void printhex(int decimal){
+    char* a= int_to_hex_string(decimal);
+    print(a);
+}
+
+void printch(char character){  
+    // Point p = {300,400};
+    // draw_rectangle(p, 5,5,13);
+    // unsigned char * vidmem = (unsigned char *) VIDEO_ADDRESS ;  
+    // vidmem[get_cursor()] = character;
 
     print_char(character, -1, -1, WHITE_ON_BLACK);    
 }
-
 
 void printn(char* message){
     print_char('\n', -1, -1, WHITE_ON_BLACK); 

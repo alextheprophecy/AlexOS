@@ -1,5 +1,5 @@
-C_SOURCES = $(wildcard drivers/*.c lib/*/*.c kernel/*.c)
-HEADERS = $(wildcard kernel/*.h drivers/*.h lib/*/*.h)
+C_SOURCES = $(wildcard kernel/*.c kernel/*/*.c drivers/*.c lib/*/*.c)
+HEADERS = $(wildcard kernel/*.h kernel/*/*.c drivers/*.h lib/*/*.h)
 OBJ = $(C_SOURCES:.c=.o)	
 
 
@@ -16,7 +16,7 @@ kernel.bin : kernel/kernel_entry.o ${OBJ}
 
 
 %.o : %.c ${HEADERS} 
-	i686-elf-gcc -ffreestanding -nostdlib -c $< -o $@
+	i686-elf-gcc -w -ffreestanding -nostdlib -c $< -o $@
 
 # Assemble the kernel_entry
 %.o : %.asm
