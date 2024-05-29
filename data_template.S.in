@@ -1,0 +1,18 @@
+.section .text_data
+
+
+
+.global __res_@sym@_start
+__res_@sym@_start:
+    .incbin "@file@"    
+    .byte 2
+    .byte 8
+    .byte 8
+    .byte 8
+.global __res_@sym@_end
+__res_@sym@_end:
+
+.global __res_@sym@_size
+__res_@sym@_size:
+    .int __res_@sym@_end - __res_@sym@_start    
+

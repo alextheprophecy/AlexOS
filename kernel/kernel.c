@@ -2,6 +2,8 @@
 
 extern char __rodata_start;
 extern char __rodata_end;
+extern char __text_data_start;
+extern char __text_data_end;
 
 void clear_bss() {
     extern char __bss_start;
@@ -29,16 +31,32 @@ void main(int* count, char* args) {
 
     printn("INFO:\n");
 
-    unsigned short total;
-    unsigned char lowmem, highmem;
+    // unsigned short total;
+    // unsigned char lowmem, highmem;
  
-    port_byte_out(0x70, 0x30);
-    lowmem = port_byte_in(0x71);
-    port_byte_out(0x70, 0x31);
-    highmem = port_byte_in(0x71);
+    // port_byte_out(0x70, 0x30);
+    // lowmem = port_byte_in(0x71);
+    // port_byte_out(0x70, 0x31);
+    // highmem = port_byte_in(0x71);
  
-    total = lowmem | highmem << 8;
-    printhex(total);
+    // total = lowmem | highmem << 8;
+    // printhex(total);
+
+    char* a = &__text_data_start;
+    printhex(a);
+
+    print("\n");
+
+    a = &__text_data_end;
+    printhex(a);
+
+    print("\n");
+
+    a = &__text_data_start;
+    printhex(*a);
+    
+
+
     //draw();  
 
 }

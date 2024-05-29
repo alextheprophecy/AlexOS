@@ -23,5 +23,10 @@ SECTIONS
         *(.bss)
         __bss_end = .;
     }
+    .text_data ALIGN(4) : {
+        __text_data_start = .;  
+        *(.text_data)
+        __text_data_end = .;
+    }
     __k_heap_start = .;
 }
