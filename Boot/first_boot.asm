@@ -21,7 +21,7 @@ jmp $
 %include "disk_load.asm"
 
 BOOT_DRIVE db 0
-MSG db "First. " , 0
+MSG db "First boot. " , 0
 
 ; Bootsector padding
 times 510 -($ -$$) db 0

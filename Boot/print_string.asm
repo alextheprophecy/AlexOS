@@ -10,6 +10,11 @@ loop:
 	jmp loop
 
 out:
-	mov al, ' '
-	int 0x10
 	ret
+
+print_char:
+    pusha
+    mov ah, 0x0E
+    int 0x10
+    popa
+    ret

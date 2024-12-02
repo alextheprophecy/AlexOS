@@ -9,7 +9,7 @@ all : os-image
 run : all
 	qemu-system-i386 -drive format=raw,file=os-image
 
-os-image : boot/first_boot.bin boot/second_boot.bin kernel.bin#boot/boot_sect.bin#boot/boot_sect.bin kernel.bin
+os-image : boot/first_boot.bin boot/second_boot.bin kernel.bin #boot/boot_sect.bin#boot/boot_sect.bin kernel.bin
 	cat $^ > os-image
 
 kernel.bin : kernel/kernel_entry.o ${OBJ}
