@@ -27,6 +27,7 @@ qemu-system-x86_64 -drive file=boot_sect.bin,format=raw
 
 draw_line(Point p, color) -uses Bresenham's line algorithm
 draw_rectangle
+draw_horizontal_line -optimized for efficiency
 
 ## Resources
 
