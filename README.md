@@ -27,7 +27,6 @@ A bare metal x86 kernel with a custom two-stage bootloader, written primarily in
   - Interrupt Service Routines (ISR)
   - Hardware interrupt handling (IRQ)
  
-(https://wiki.osdev.org/Drawing_In_Protected_Mode)
 - **🖋️Text Mode (text 40*25 16 color)** 
   - Full keyboard support with scan code mapping
   - Screen scrolling and cursor management
@@ -58,3 +57,5 @@ A bare metal x86 kernel with a custom two-stage bootloader, written primarily in
  <https://wiki.osdev.org/Expanded_Main_Page>
  
  <https://539kernel.com/A_Journey_in_Creating_an_Operating_System_Kernel_The_539kernel_Book.pdf>
+ 
+ Different VGA modes: <https://wiki.osdev.org/Drawing_In_Protected_Mode>
