@@ -28,8 +28,10 @@ qemu-system-x86_64 -drive file=boot_sect.bin,format=raw
 draw_line(Point p, color) -uses Bresenham's line algorithm
 draw_rectangle
 
-## resources
+## Resources
 
  <https://www.kernel.org/doc/gorman/html/understand/understand009.html>
+ 
  <https://wiki.osdev.org/Expanded_Main_Page>
+ 
  <https://539kernel.com/A_Journey_in_Creating_an_Operating_System_Kernel_The_539kernel_Book.pdf>
